@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #141f29;
+  height: 50vh;
+  box-sizing: border-box;
+}
+.page-container {
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-rows: 5vw 73vh 5vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: 100%;
+  box-shadow: 1px 1px 10px #a39d9d34;
+}
+
+header {
+  background-color: #42c0a6;
+  color: antiquewhite;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+
+header img {
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+main {
+  background-image: url("../img/chat-wallpaper.png");
+  background-size: cover;
+}
+
+footer {
+  background-color: #141f29;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  box-shadow: 0 1px 10px #203242;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 50%;
+}
+
+input {
+  height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.area-de-mensagem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 75%;
+  border-radius: 10px;
+  min-width: 300px;
+}
+#mensagem {
+  width: 90%;
+}
+#nome {
+  border-radius: 10px;
+  width: 20%;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button > img {
+  width: 25px;
+  height: 25px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 255, 0.185);
+  transition: all 1s;
+}
+
+button:not(:hover) {
+  transition: all 1s;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    min-width: 400px;
+}
+  .page-container {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 60px 67vh;
+  }
+  header {
+    height: 60px;
+  }
+  main {
+      height: 80vh;
+  }
+
+  footer {
+    height: 120px;
+    padding: 0;
+    margin-bottom: 0;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mensagem {
+    width: 90%;
+  }
+  #nome {
+    border-radius: 10px;
+    width: 75%;
+    margin-bottom: 7px;
+  }
+
+  button {
+    width: 40px;
+    margin-right: 5px;
+  }
+
+  header, main, footer, body{
+      min-width: 400px;
+  }
+}

@@ -2,9 +2,9 @@ import Principal from "./pages/Principal";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Principal />
-    </div>
+    </>
   );
 }
 
