@@ -1,0 +1,17 @@
+.bubble {
+  box-sizing: border-box;
+  display: block;
+  height: fit-content;
+  padding: 10px;
+  margin: 10px 0 10px 50%;
+
+  list-style: none;
+  
+  
+  align-self: flex-end;
+
+  background-color: #83f8e1a6;
+  border-start-end-radius: 15px;
+  border-start-start-radius: 15px;
+  border-end-start-radius: 15px;
+}

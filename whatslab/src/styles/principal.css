@@ -34,8 +34,29 @@ header img {
   margin-left: 20px;
 }
 main {
+  box-sizing: border-box;
   background-image: url("../img/chat-wallpaper.png");
   background-size: cover;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: auto;
+  padding: 10px;
+}
+
+main > ul {
+  align-self: flex-end;
+  width: 100%;
+}
+
+main > span {
+  color: rgb(192, 190, 190);
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: fixed;
+}
+
+.container-de-bubbles {
+  width: 25vw;
 }
 
 footer {
@@ -80,7 +101,7 @@ input {
 }
 
 button {
-  width: 100px;
+  width: 50px;
   height: 40px;
   background-color: white;
   border: none;
@@ -97,28 +118,30 @@ button > img {
 
 button:hover {
   background-color: rgba(0, 0, 255, 0.185);
-  transition: all 1s;
+  transition: all .2s;
 }
 
 button:not(:hover) {
-  transition: all 1s;
+  transition: all .2s;
 }
 
 @media screen and (max-width: 700px) {
   body {
     min-width: 400px;
-}
+  }
   .page-container {
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-rows: 60px 67vh;
-  }
+    }
   header {
     height: 60px;
   }
   main {
-      height: 80vh;
+    height: 80vh;
+    padding-bottom: 50px;
+    box-sizing: border-box;
   }
 
   footer {
@@ -152,7 +175,10 @@ button:not(:hover) {
     margin-right: 5px;
   }
 
-  header, main, footer, body{
-      min-width: 400px;
+  header,
+  main,
+  footer,
+  body {
+    min-width: 400px;
   }
 }
