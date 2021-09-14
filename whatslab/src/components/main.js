@@ -1,12 +1,16 @@
 import React from "react";
+import '../styles/main-style.css'
 
 
 class Main extends React.Component {
     render() {
       return (
-        <div>
-            <p>corpo do site</p>
-        </div>
+        <main>
+          {/* <ul>
+            <Bubbles nameKey={nameKeyCounter} msgKey={msgKeyCounter} />
+          </ul>
+          <span>{message === '' ? true: `${name} está digitando...`}</span> */}
+        </main>
       );
     }
   }

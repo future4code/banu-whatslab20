@@ -1,0 +1,21 @@
+header {
+    background-color: #42c0a6;
+    color: antiquewhite;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+  
+header img {
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    height: 60px;
+  }
+}
