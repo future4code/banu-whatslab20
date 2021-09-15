@@ -13,12 +13,10 @@ import iconChatLogo from "../img/whatsapp.png";
 export default function Principal() {
   const [name, updateName] = useState("");
   const [message, updateMessage] = useState("");
-  const [nameKeyCounter, updateNameKey] = useState(0);
-  const [msgKeyCounter, updateMsgKey] = useState(1);
+  const [key, updateKey] = useState(0);
 
   const incrementKey = () => {
-    updateNameKey(nameKeyCounter + 1);
-    updateMsgKey(msgKeyCounter + 1);
+    updateKey(key + 1);
   };
 
   return (
@@ -29,7 +27,7 @@ export default function Principal() {
       </header>
       <main>
         <ul>
-        <Bubbles nameKey={nameKeyCounter} msgKey={msgKeyCounter} />
+        <Bubbles/>
         </ul>
         <span>{message === '' ? true: `${name} está digitando...`}</span>
       </main>
@@ -64,9 +62,14 @@ export default function Principal() {
               type="submit"
               onClick={(e) => {
                 e.preventDefault();
-                handleChat(name, message);
-                incrementKey();
-                updateMessage("");
+                if (message === '' || name === ''){
+                  alert("Mensagem e Nome não podem estar vazios")
+                } else {
+                  incrementKey();
+                  handleChat(name, message, key);
+                  updateMessage("");
+                  console.log(key)
+                }
               }}
             >
               <img src={iconButton} alt="enviar" />

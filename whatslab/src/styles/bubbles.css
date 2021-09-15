@@ -1,9 +1,12 @@
 .bubble {
   box-sizing: border-box;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   height: fit-content;
   padding: 10px;
   margin: 10px 0 10px 50%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   list-style: none;
   
