@@ -15,6 +15,8 @@ const Delete = styled.div`
     width: 100%;
     height: 100%;
     background-color: #5caca0;
+    border: none;
+
 
     & :hover {
       background-color: #28685e;
