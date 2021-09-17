@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 //LightTheme
 import darkImg from "../img/iconLua.png";
@@ -10,14 +10,30 @@ import bg from "../img/whiteBg.gif";
 import img from "../img/chat-wallpaper.png";
 
 
+
+const Flip = keyframes`
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }`;
+
 const SwitchTheme = styled.div`
-grid-column: 4/5;
-margin: 0 auto;
-padding-right: 20px;
+  grid-column: 4/5;
+  margin: 0 auto;
+  padding-right: 20px;
 
   img {
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
+
+    &:hover {
+      animation-name: ${Flip};
+      animation-duration: 1s;
+    }
   }
 `;
 
@@ -43,9 +59,12 @@ export default function Theme() {
   const changeThemeLight = () => {
     setIsDark(!isDark);
     document.getElementById("body").style.backgroundColor = lightColors.body;
-    document.getElementById("main").style.backgroundImage = `url(${lightColors.background})`;
+    document.getElementById(
+      "main"
+    ).style.backgroundImage = `url(${lightColors.background})`;
     document.getElementById("main").style.boxShadow = lightColors.shadowColor;
-    document.getElementById("footer").style.backgroundColor = lightColors.footer;
+    document.getElementById("footer").style.backgroundColor =
+      lightColors.footer;
     document.getElementById("footer").style.boxShadow = lightColors.shadowColor;
     document.getElementById("feedback").style.color = "#141f29";
   };
@@ -53,13 +72,13 @@ export default function Theme() {
   const changeThemeDark = () => {
     setIsDark(!isDark);
     document.getElementById("body").style.backgroundColor = darkColors.body;
-    document.getElementById("main").style.backgroundImage = `url(${darkColors.background})`;
+    document.getElementById(
+      "main"
+    ).style.backgroundImage = `url(${darkColors.background})`;
     document.getElementById("main").style.boxShadow = darkColors.shadowColor;
     document.getElementById("footer").style.backgroundColor = darkColors.footer;
     document.getElementById("footer").style.boxShadow = darkColors.shadowColor;
   };
-
-
 
   return (
     <SwitchTheme onClick={isDark ? changeThemeLight : changeThemeDark}>
