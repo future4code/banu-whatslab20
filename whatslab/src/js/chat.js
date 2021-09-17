@@ -1,3 +1,4 @@
+
 var history = [];
 
 function handleChat(name, message, key) {
@@ -15,5 +16,6 @@ function deletMessage(clue) {
     document.getElementById(history[clue].listKey).style.display = "none";
   }
 }
+
 
 export { handleChat, history, deletMessage };

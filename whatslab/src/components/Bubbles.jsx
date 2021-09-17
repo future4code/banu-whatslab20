@@ -1,4 +1,3 @@
-import React from "react";
 //import "../styles/bubbles.css";
 
 import styled, { keyframes } from "styled-components";
@@ -6,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 import { history, deletMessage } from "../js/chat";
 import DeleteMessage from "../components/DeleteMessage";
 
-const animation = keyframes`
+const animationEntering = keyframes`
   0% {
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -31,7 +30,7 @@ const Bubbles = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   color: #1b1b1b;
 
-  animation-name: ${animation};
+  animation-name: ${animationEntering};
   animation-duration: 0.5s;
 
   list-style: none;
@@ -62,7 +61,7 @@ export default function BubblesComponent() {
     <>
       {history.map((value) => {
         return (
-          <Bubbles key={value.listKey} id={value.listKey} onDoubleClick={(e) => {
+          <Bubbles deleted key={value.listKey} id={value.listKey} onDoubleClick={(e) => {
             e.preventDefault();
             deletMessage(value.listKey);
           }}>

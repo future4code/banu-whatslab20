@@ -30,7 +30,7 @@ const Main = styled.div`
 
 export default function MainComponent(props) {
   return(
-  <Main>
+  <Main id='main'>
     {props.children}
   </Main>)
 }

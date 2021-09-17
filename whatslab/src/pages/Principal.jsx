@@ -3,6 +3,8 @@ import React from "react";
 import {HeaderComponent, MainComponent, FooterComponent, PageContainerComponent} from "./Exporter";
 
 import BubblesComponent from "../components/Bubbles";
+import ThemeHandler from '../components/ThemeHandler'
+
 
 import { useState } from "react";
 import { handleChat } from "../js/chat";
@@ -26,13 +28,14 @@ export default function Principal() {
         <HeaderComponent>
           <img src={iconChatLogo} alt="icone" />
           <h2>WhatsLab</h2>
+          <ThemeHandler />
         </HeaderComponent>
         
         <MainComponent>
           <ul>
             <BubblesComponent />
           </ul>
-          <span>{message === "" ? null : `${name} está digitando...`}</span>
+          <span id='feedback'>{message === "" ? null : `${name} está digitando...`}</span>
         </MainComponent>
 
         <FooterComponent>

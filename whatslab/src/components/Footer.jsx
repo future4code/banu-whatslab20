@@ -32,6 +32,7 @@ const Footer = styled.div`
     width: 75%;
     border-radius: 10px;
     min-width: 300px;
+    
   }
   #mensagem {
     width: 90%;
@@ -44,7 +45,6 @@ const Footer = styled.div`
   button {
     width: 50px;
     height: 40px;
-    background-color: white;
     border: none;
     border-radius: 10px;
     display: flex;
@@ -69,5 +69,5 @@ const Footer = styled.div`
 `;
 
 export default function FooterComponent(props) {
-  return <Footer>{props.children} </Footer>;
+  return <Footer id='footer'>{props.children} </Footer>;
 }
