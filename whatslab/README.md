@@ -1,9 +1,10 @@
 # Link Surge:
-[WhatsLab](http://soft-request.surge.sh)
+[WhatsLab](http://sloppy-face.surge.sh)
+
 # O que está funcionando:
 
 - Enviar com enter
-- Bolhas Estilizadas
+- Bolhas estilizadas
 - Excluir mensagem com botão
 - Excluir mensagem com clique duplo
 - Animação
