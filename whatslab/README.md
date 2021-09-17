@@ -1,5 +1,5 @@
 # Link Surge:
-[WhatsLab](http://dangerous-carpenter.surge.sh)
+[WhatsLab](http://soft-request.surge.sh)
 # O que está funcionando:
 
 - Enviar com enter
