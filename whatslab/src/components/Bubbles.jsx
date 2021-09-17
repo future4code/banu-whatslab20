@@ -50,15 +50,10 @@ const Bubbles = styled.div`
 
   b {
     color: #252525;
-    
-    hr{
-      margin-top: 10px;
-      opacity: .3;
-    }
   }
 
   li{
-    margin: 5px;
+    margin: 2px 0;
   }
 `;
 
@@ -74,7 +69,6 @@ export default function BubblesComponent() {
             <li>
               <b>
                 <i>{value.nick}:</i>
-                <hr />
               </b>
             </li>
             <li>{value.text}</li>
