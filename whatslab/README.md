@@ -5,7 +5,7 @@
 - Enviar com enter
 - Bolhas Estilizadas
 - Excluir mensagem com botão
-- Duplo clique para excluir mensagem
+- Excluir mensagem com clique duplo
 - Animação
 - Bloqueio para envio de mensagem vazia ou anônima
 - Feedback de "usuário está digitando"
