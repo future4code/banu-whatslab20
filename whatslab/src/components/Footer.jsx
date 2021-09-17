@@ -50,23 +50,24 @@ const Footer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 255, 0.185);
+      transition: all 0.2s;
+    }
+    
+    &:not(:hover) {
+      transition: all 0.2s;
+    }
   }
 
-  button > img {
-    width: 25px;
-    height: 25px;
-  }
-
-  button:hover {
-    background-color: rgba(0, 0, 255, 0.185);
-    transition: all 0.2s;
-  }
-
-  button:not(:hover) {
-    transition: all 0.2s;
-  }
 `;
 
 export default function FooterComponent(props) {
-  return <Footer> {props.children} </Footer>;
+  return <Footer>{props.children} </Footer>;
 }

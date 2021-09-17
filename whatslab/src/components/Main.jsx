@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import img from '../img/chat-wallpaper.png'
+import img from "../img/chat-wallpaper.png";
 
 const Main = styled.div`
   box-sizing: border-box;
@@ -29,5 +29,8 @@ const Main = styled.div`
 `;
 
 export default function MainComponent(props) {
-  return <Main> {props.children} </Main>;
+  return(
+  <Main>
+    {props.children}
+  </Main>)
 }

@@ -67,7 +67,7 @@ export default function Principal() {
                 onClick={(e) => {
                   e.preventDefault();
                   if (message === "" || name === "") {
-                    alert("Mensagem e Nome não podem estar vazios");
+                    alert("Nome e Mensagem não podem estar vazios");
                   } else {
                     incrementKey();
                     handleChat(name, message, key);
