@@ -1,0 +1,23 @@
+/* ESTE ARQUIVO NÃO FUNCIONA MAIS. MANTIVE APENAS COMO BACKUP */
+
+
+.bubble {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: fit-content;
+  padding: 10px;
+  margin: 10px 0 10px 50%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  list-style: none;
+  
+  
+  align-self: flex-end;
+
+  background-color: #83f8e1a6;
+  border-start-end-radius: 15px;
+  border-start-start-radius: 15px;
+  border-end-start-radius: 15px;
+}
