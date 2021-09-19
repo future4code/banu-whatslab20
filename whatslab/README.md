@@ -27,5 +27,4 @@
 ![Terceira Tela](https://i.ibb.co/sgpmRj8/3.png)
 ![Quarta Tela](https://i.ibb.co/bm0QY0w/4.png)
 ![Quinta Tela](https://i.ibb.co/8P3jhwt/tela2.png)
-![Sexta Tela](https://i.ibb.co/wzvKJcB/tela6.png)
-
+![tela6](https://user-images.githubusercontent.com/5132840/133931395-1bedc028-096c-4889-a0b8-509c92243b78.png)
