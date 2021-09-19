@@ -1,11 +1,15 @@
 
 var history = [];
-
 function handleChat(name, message, key) {
+  let date = new Date()
+  let hour = date.getHours()
+  let minute = date.getMinutes()
+
   history.push({
     nick: name,
     text: message,
     listKey: Number(key),
+    time: `${hour}:${minute}`
   });
 }
 
@@ -18,4 +22,4 @@ function deletMessage(clue) {
 }
 
 
-export { handleChat, history, deletMessage };
+export { handleChat, deletMessage, history };

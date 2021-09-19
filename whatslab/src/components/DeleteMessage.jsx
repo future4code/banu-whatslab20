@@ -3,30 +3,31 @@ import styled from "styled-components";
 
 import { deletMessage } from "../js/chat";
 
-import img from "../img/trash-bin.png";
+import img from "../img/trash-bin.svg";
 
 const Delete = styled.div`
-  width: 18px;
+  width: 60px;
   height: 18px;
-  display: block;
+  display: flex;
+  flex-direction: row;
   align-self: flex-end;
+  align-items: center;
+  justify-content: space-between;
 
-  button {
-    width: 100%;
-    height: 100%;
-    background-color: #5caca0;
-    border: none;
-
-
-    & :hover {
-      background-color: #28685e;
-      transition: all 0.5s;
-    }
 
     img {
-      width: 100%;
-      height: 100%;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
+
+      & :active {
+        background-color: yellow;
+        transition: all 0.5s;
+      }
+    
+
+    div {
+      margin-right: 30px;
     }
   }
 `;
@@ -39,9 +40,8 @@ export default function DeleteMessage(props) {
         deletMessage(props.clue);
       }}
     >
-      <button type="submit">
-        <img src={img} alt="apagar mensagem" />
-      </button>
+      <div>{props.time}</div>
+      <img src={img} alt="apagar mensagem" />
     </Delete>
   );
 }
