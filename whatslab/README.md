@@ -1,5 +1,5 @@
 # Link Surge:
-[WhatsLab](http://sloppy-face.surge.sh)
+[WhatsLab](http://healthy-weight.surge.sh)
 
 # O que está funcionando:
 
