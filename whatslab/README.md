@@ -11,6 +11,7 @@
 - Bloqueio para envio de mensagem vazia ou anônima
 - Feedback de "usuário está digitando"
 - Persistência do ultimo nome
+- Conversação: bolhas diferentes para quando o usuário for diferente de "Eu"
 - 🌟 🌘 Temas Light/Dark
 
 
@@ -26,4 +27,5 @@
 ![Terceira Tela](https://i.ibb.co/sgpmRj8/3.png)
 ![Quarta Tela](https://i.ibb.co/bm0QY0w/4.png)
 ![Quinta Tela](https://i.ibb.co/8P3jhwt/tela2.png)
+![Sexta Tela](https://i.ibb.co/wzvKJcB/tela6.png)
 
