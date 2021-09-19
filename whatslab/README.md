@@ -12,6 +12,7 @@
 - Feedback de "usuário está digitando"
 - Persistência do ultimo nome
 - Conversação: bolhas diferentes para quando o usuário for diferente de "Eu"
+- Bolha contém o horário de envio da mensagem
 - 🌟 🌘 Temas Light/Dark
 
 
