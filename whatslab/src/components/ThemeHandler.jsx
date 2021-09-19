@@ -11,15 +11,38 @@ import img from "../img/chat-wallpaper.png";
 
 
 
-const Flip = keyframes`
+const Entering = keyframes`
   0% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: rotateX(-180deg);
-            transform: rotateX(-180deg);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
   }`;
+
+const Exiting = keyframes` 
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+    opacity: 0;
+  }
+`
 
 const SwitchTheme = styled.div`
   grid-column: 4/5;
@@ -31,7 +54,12 @@ const SwitchTheme = styled.div`
     width: 30px;
 
     &:hover {
-      animation-name: ${Flip};
+      animation-name: ${Exiting};
+      animation-duration: 1s;
+    }
+
+    &:not(:hover){
+      animation-name: ${Entering};
       animation-duration: 1s;
     }
   }
@@ -59,12 +87,9 @@ export default function Theme() {
   const changeThemeLight = () => {
     setIsDark(!isDark);
     document.getElementById("body").style.backgroundColor = lightColors.body;
-    document.getElementById(
-      "main"
-    ).style.backgroundImage = `url(${lightColors.background})`;
+    document.getElementById( "main" ).style.backgroundImage = `url(${lightColors.background})`;
     document.getElementById("main").style.boxShadow = lightColors.shadowColor;
-    document.getElementById("footer").style.backgroundColor =
-      lightColors.footer;
+    document.getElementById("footer").style.backgroundColor = lightColors.footer;
     document.getElementById("footer").style.boxShadow = lightColors.shadowColor;
     document.getElementById("feedback").style.color = "#141f29";
   };

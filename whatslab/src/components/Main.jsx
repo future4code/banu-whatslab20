@@ -8,13 +8,16 @@ const Main = styled.div`
   background-size: cover;
   display: flex;
   flex-direction: column-reverse;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 10px;
+  grid-row: 2/3;
 
   ul {
-    align-self: flex-end;
     width: 100%;
     margin-bottom: 15px;
+    display: block;
+    height: fit-content;
   }
 
   span {
@@ -27,6 +30,10 @@ const Main = styled.div`
   .container-de-bubbles {
     width: 25vw;
   }
+
+
+
+
 `;
 
 export default function MainComponent(props) {

@@ -8,9 +8,12 @@ const Footer = styled.div`
   align-items: center;
   padding: 50px;
   box-shadow: 0 1px 10px #203242;
+  grid-row: 3/4;
+
 
   form {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     min-width: 50%;
@@ -64,6 +67,24 @@ const Footer = styled.div`
     &:not(:hover) {
       transition: all 0.2s;
     }
+  }
+
+  @media screen and (max-width: 589px){
+      padding-left:0;
+      padding-right:0;
+      
+      form {
+        justify-content: center;
+      }
+
+      #nome{
+        width: 90%;
+        margin-bottom: 10px;
+      }
+      
+      .area-de-mensagem{
+        width: 90%;
+      }
   }
 
 `;

@@ -15,6 +15,7 @@ const Header = styled.div`
     height: 24px;
     margin: 0 auto
   }
+
 `;
 
 export default function HeaderComponent(props) {

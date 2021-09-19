@@ -20,89 +20,93 @@ const animationEntering = keyframes`
 `;
 
 const Bubbles = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  height: fit-content;
-  padding: 10px;
-  margin: 10px 0 10px 70%;
   font-family: Arial, Helvetica, sans-serif;
   color: #1b1b1b;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px 0 10px 70%;
 
   animation-name: ${animationEntering};
   animation-duration: 0.5s;
-
+  
   list-style: none;
-
-  align-self: flex-end;
 
   background-color: #83f8e1a6;
   border-start-end-radius: 15px;
   border-start-start-radius: 15px;
   border-end-start-radius: 15px;
 
-  &:hover{
+  &:hover {
     box-shadow: 5px 5px 5px #83f8e137;
-    transition: all .3s;
-  }
-
-  li{
-    margin: 2px 0;
-  }
-
-  div{
-    align-self: flex-end;
+    transition: all 0.3s;
   }
 
 
+
+  @media screen and (max-width: 990px) {
+    margin: 0;
+    margin-bottom: 10px;
+  }
 `;
 
 const BubbleSomeoneElse = styled(Bubbles)`
+  background-color: #0a7c90;
+  color: whitesmoke;
+  margin: 10px 70% 10px 0;
+  align-self: flex-start;
+  border-end-start-radius: 0;
+  border-end-end-radius: 15px;
 
-background-color: #0a7c90;
-color: whitesmoke;
-margin: 10px 70% 10px 0;
-align-self: flex-start;
-border-end-start-radius: 0;
-border-end-end-radius: 15px;
-
-b {
+  b {
     color: whitesmoke;
   }
 
-`
+  @media screen and (max-width: 990px) {
+    margin: 10px;
+  }
+`;
 
 export default function BubblesComponent() {
   return (
     <>
       {history.map((value) => {
-        if ((value.nick).toLowerCase() === 'eu'){
+        if (value.nick.toLowerCase() === "eu") {
           return (
-            <Bubbles deleted key={value.listKey} id={value.listKey} onDoubleClick={(e) => {
-              e.preventDefault();
-              deletMessage(value.listKey);
-            }}>
-              <li>{value.text}</li>       
-              <DeleteMessage clue={value.listKey} time={value.time}/>
+            <Bubbles deleted
+              key={value.listKey}
+              id={value.listKey}
+              onDoubleClick={(e) => {
+                e.preventDefault();
+                deletMessage(value.listKey);
+              }}
+            >
+              <li>{value.text}</li>
+              <DeleteMessage clue={value.listKey} time={value.time} />
             </Bubbles>
           );
-          
         } else {
           return (
-            <BubbleSomeoneElse deleted key={value.listKey} id={value.listKey} onDoubleClick={(e) => {
-              e.preventDefault();
-              deletMessage(value.listKey);
-            }}>
+            <BubbleSomeoneElse
+              deleted
+              key={value.listKey}
+              id={value.listKey}
+              onDoubleClick={(e) => {
+                e.preventDefault();
+                deletMessage(value.listKey);
+              }}
+            >
               <li>
                 <b>
                   <i>{value.nick}:</i>
                 </b>
               </li>
+
               <li>{value.text}</li>
-              <DeleteMessage clue={value.listKey} time={value.time}/>
+              <DeleteMessage clue={value.listKey} time={value.time} />
             </BubbleSomeoneElse>
-          )
+          );
         }
       })}
     </>
