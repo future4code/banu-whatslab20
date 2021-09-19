@@ -33,7 +33,7 @@ export default function Principal() {
         
         <MainComponent>
           <ul>
-            <BubblesComponent />
+          <BubblesComponent />
           </ul>
           <span id='feedback'>{message === "" ? null : `${name} está digitando...`}</span>
         </MainComponent>

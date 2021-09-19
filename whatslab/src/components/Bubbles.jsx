@@ -26,7 +26,7 @@ const Bubbles = styled.div`
   flex-direction: column;
   height: fit-content;
   padding: 10px;
-  margin: 10px 0 10px 50%;
+  margin: 10px 0 10px 70%;
   font-family: Arial, Helvetica, sans-serif;
   color: #1b1b1b;
 
@@ -47,33 +47,63 @@ const Bubbles = styled.div`
     transition: all .3s;
   }
 
-  b {
-    color: #252525;
-  }
-
   li{
     margin: 2px 0;
   }
+
+  div{
+    align-self: flex-end;
+  }
+
+
 `;
+
+const BubbleSomeoneElse = styled(Bubbles)`
+
+background-color: #0a7c90;
+color: whitesmoke;
+margin: 10px 70% 10px 0;
+align-self: flex-start;
+border-end-start-radius: 0;
+border-end-end-radius: 15px;
+
+b {
+    color: whitesmoke;
+  }
+
+`
 
 export default function BubblesComponent() {
   return (
     <>
       {history.map((value) => {
-        return (
-          <Bubbles deleted key={value.listKey} id={value.listKey} onDoubleClick={(e) => {
-            e.preventDefault();
-            deletMessage(value.listKey);
-          }}>
-            <li>
-              <b>
-                <i>{value.nick}:</i>
-              </b>
-            </li>
-            <li>{value.text}</li>
-            <DeleteMessage clue={value.listKey} />
-          </Bubbles>
-        );
+        if ((value.nick).toLowerCase() === 'eu'){
+          return (
+            <Bubbles deleted key={value.listKey} id={value.listKey} onDoubleClick={(e) => {
+              e.preventDefault();
+              deletMessage(value.listKey);
+            }}>
+              <li>{value.text}</li>       
+              <DeleteMessage clue={value.listKey} time={value.time}/>
+            </Bubbles>
+          );
+          
+        } else {
+          return (
+            <BubbleSomeoneElse deleted key={value.listKey} id={value.listKey} onDoubleClick={(e) => {
+              e.preventDefault();
+              deletMessage(value.listKey);
+            }}>
+              <li>
+                <b>
+                  <i>{value.nick}:</i>
+                </b>
+              </li>
+              <li>{value.text}</li>
+              <DeleteMessage clue={value.listKey} time={value.time}/>
+            </BubbleSomeoneElse>
+          )
+        }
       })}
     </>
   );
