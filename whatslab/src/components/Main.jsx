@@ -24,21 +24,22 @@ const Main = styled.div`
     color: rgb(192, 190, 190);
     font-size: 16px;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    position: fixed;
+    position: absolute;
+    bottom: 22vh;
   }
 
   .container-de-bubbles {
     width: 25vw;
   }
 
-
-
-
+  @media screen and (max-width: 589px) {
+    span {
+      position: absolute;
+      bottom: 17vh;
+    }
+  }
 `;
 
 export default function MainComponent(props) {
-  return(
-  <Main id='main'>
-    {props.children}
-  </Main>)
+  return <Main id="main">{props.children}</Main>;
 }
