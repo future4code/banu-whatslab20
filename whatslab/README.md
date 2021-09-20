@@ -1,5 +1,5 @@
 # Link Surge:
-[WhatsLab](http://chemical-system.surge.sh)
+[WhatsLab](http://empty-party.surge.sh)
 
 # O que está funcionando:
 
