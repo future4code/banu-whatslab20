@@ -34,8 +34,7 @@ const Main = styled.div`
 
   @media screen and (max-width: 589px) {
     span {
-      position: absolute;
-      bottom: 17vh;
+      display: none;
     }
   }
 `;
