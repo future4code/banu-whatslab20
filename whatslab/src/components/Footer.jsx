@@ -53,6 +53,7 @@ const Footer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 
     img {
       width: 25px;
@@ -60,7 +61,7 @@ const Footer = styled.div`
     }
 
     &:hover {
-      background-color: rgba(0, 0, 255, 0.185);
+      background-color: #BCBDBC;
       transition: all 0.2s;
     }
     
