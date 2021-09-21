@@ -97,9 +97,7 @@ export default function Theme() {
   const changeThemeDark = () => {
     setIsDark(!isDark);
     document.getElementById("body").style.backgroundColor = darkColors.body;
-    document.getElementById(
-      "main"
-    ).style.backgroundImage = `url(${darkColors.background})`;
+    document.getElementById( "main" ).style.backgroundImage = `url(${darkColors.background})`;
     document.getElementById("main").style.boxShadow = darkColors.shadowColor;
     document.getElementById("footer").style.backgroundColor = darkColors.footer;
     document.getElementById("footer").style.boxShadow = darkColors.shadowColor;

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const PageContainer = styled.div`
-  .page-container {
     font-family: "Roboto", sans-serif;
     height: 90vh;
     display: grid;
@@ -11,7 +10,7 @@ const PageContainer = styled.div`
     margin-left: 10vw;
     margin-right: 10vw;
     box-shadow: 1px 1px 10px #a39d9d34;
-  }
+  
 
   @media screen and (max-width: 589px) {
     .page-container {
@@ -19,10 +18,14 @@ const PageContainer = styled.div`
       height: 95vh;
       grid-template-rows: 6vh 1fr 11vh;
     }
-
-
   }
 `;
 export default function PageContainerComponent(props) {
-  return <PageContainer> {props.children}</PageContainer>;
+  return (
+
+    <PageContainer>
+       {props.children}
+    </PageContainer>
+
+  )
 }
