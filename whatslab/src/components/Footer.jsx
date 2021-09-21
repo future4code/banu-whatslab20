@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+import { handleChat } from "../js/chat";
+
+import iconButton from "../img/paper-plane.png";
+
 const Footer = styled.div`
   background-color: #141f29;
   display: flex;
@@ -91,5 +95,53 @@ const Footer = styled.div`
 `;
 
 export default function FooterComponent(props) {
-  return <Footer id='footer'>{props.children} </Footer>;
+
+  let name = props.name
+  let message = props.message
+  let key = Number(props.keyProp)
+
+  return <Footer id='footer'>
+    <form autoComplete="off">
+            <input
+              id="nome"
+              type="text"
+              placeholder="nome"
+              autoComplete="off"
+              value={name}
+              onChange={(e) => {
+                e.preventDefault();
+                props.updateName(e.target.value);
+              }}
+            />
+            <div className="area-de-mensagem">
+              <input
+                id="mensagem"
+                autoComplete="off"
+                type="text"
+                placeholder="Digite sua mensagem"
+                value={message}
+                onChange={(e) => {
+                  e.preventDefault();
+                  props.updateMessage(e.target.value);
+                }}
+              />
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (message === "" || name === "") {
+                    alert("Nome e Mensagem não podem estar vazios");
+                  } else {
+                    props.incrementKey();
+                    handleChat(name, message, key);
+                    props.updateMessage("");
+                    console.log(key);
+                  }
+                }}
+              >
+                <img src={iconButton} alt="enviar" />
+              </button>
+            </div>
+          </form>
+  </Footer>;
 }

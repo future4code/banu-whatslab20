@@ -19,6 +19,7 @@ const animationEntering = keyframes`
 
 `;
 
+
 const Bubbles = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   color: #1b1b1b;
@@ -43,11 +44,8 @@ const Bubbles = styled.div`
     transition: all 0.3s;
   }
 
-
-
   @media screen and (max-width: 990px) {
-    margin: 0;
-    margin-bottom: 10px;
+    margin: 10px;
   }
 `;
 
@@ -89,7 +87,6 @@ export default function BubblesComponent() {
         } else {
           return (
             <BubbleSomeoneElse
-              deleted
               key={value.listKey}
               id={value.listKey}
               onDoubleClick={(e) => {

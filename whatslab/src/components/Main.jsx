@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import img from "../img/chat-wallpaper.png";
 
+import BubblesComponent from "../components/Bubbles";
+
+
 const Main = styled.div`
   box-sizing: border-box;
   background-image: url(${img});
@@ -40,5 +43,14 @@ const Main = styled.div`
 `;
 
 export default function MainComponent(props) {
-  return <Main id="main">{props.children}</Main>;
+  return (
+    <Main id="main">
+      <ul>
+        <BubblesComponent />
+      </ul>
+      <span id="feedback">
+        {props.message && `${props.name} está digitando...`}
+      </span>
+    </Main>
+  );
 }

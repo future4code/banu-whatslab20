@@ -1,5 +1,6 @@
 
 var history = [];
+
 function handleChat(name, message, key) {
   let date = new Date()
   let hour = date.getHours()
@@ -9,16 +10,13 @@ function handleChat(name, message, key) {
     nick: name,
     text: message,
     listKey: Number(key),
-    time: `${hour}:${minute}`
+    time: `${hour}:${minute}`,
   });
 }
 
 function deletMessage(clue) {
   let answ = window.confirm("Deseja apagar esta mensagem?");
-
-  if (answ === true) {
-    document.getElementById(history[clue].listKey).style.display = "none";
-  }
+  answ && (document.getElementById(history[clue].listKey).style.display = "none")
 }
 
 
